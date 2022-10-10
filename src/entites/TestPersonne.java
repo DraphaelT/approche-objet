@@ -9,7 +9,7 @@ public class TestPersonne {
 		
 		Personne per1 = new Personne();
 		Personne per2 = new Personne();
-		
+		//Création d'une personne avec une adresse
 		per1.nom = "Jesaispas";
 		per1.prenom ="Personne";
 		per1.adr.codePostal=74512;
