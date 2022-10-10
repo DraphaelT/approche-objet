@@ -11,6 +11,18 @@ public class TestPersonne {
 		Personne per2 = new Personne("jenesaispas","Qui");
 		
 		Personne per3 = new Personne("G","Jean",adrPers1);
+		
+		//TP3 Modifier des variables 
+		per1.setNom("Youpi");
+		per1.setPrenom("Jetaitincroyable");
+		per3.setAdr(adrPers1);
+		
+		//Recupere la valeur nom de per1 pour l'afficher
+		System.out.println(per1.getNom());
+		
+		//Invoque une methode pour afficher le nom et prenom
+		per1.AffichPers();
+		
 		//1er TP
 		
 		//Création d'une personne avec une adresse
