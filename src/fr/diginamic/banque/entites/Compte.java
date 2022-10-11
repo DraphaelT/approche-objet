@@ -25,5 +25,8 @@ public class Compte {
 	void setSoldeCompte(int soldeCompte) {
 		this.soldeCompte = soldeCompte;
 	}
+	public String toString(){
+	    return "Numero de compte: "+numCompte+" Votre Solde: "+soldeCompte;
+	  }
 	
 }
