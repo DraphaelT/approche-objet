@@ -45,6 +45,10 @@ public class Jeu {
 		
 	}
 	
+	/*
+	 * Methode qui commence par appelée la methode pour crée un monstre 
+	 * Fait comfrontais  
+	 */
 	static void combat(Personnage p) {
 		Creature c = Creature.invoc();	
 		int monstrePV = c.getVie();
