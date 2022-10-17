@@ -31,6 +31,7 @@ public class TestListeString {
 		}
 		System.out.println(Max);
 		System.out.println(chaine);
+		
 	}
 
 }

@@ -1,13 +1,14 @@
-package listes;
+package tri;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.lang.Comparable;
 
 
-public class Ville{
+public class Ville implements Comparable<Ville>{
 
 	private String nom;
 	private int nbHabitant;
@@ -35,41 +36,24 @@ public class Ville{
 		ArrayList<Ville> ville = new ArrayList<Ville>();
 		
 		Collections.addAll(ville,v1,v2,v3,v4,v5,v6,v7,v8);
-		
-	
-		
-		for(Ville i : ville) {
+		/*************************************/
+		Collections.sort(ville);
+		for(Ville v : ville) {
+			System.out.println(v);
 			
-			if(i.getNbHabitant() > maxHab) {
-
-				maxHab = i.getNbHabitant();
-				nomVM = i.getNom();
-				
-			}
-		}
-		System.out.println(nomVM);	
+		}		
+		Collections.shuffle(ville);
+		/////////////////////////////////
 		
-		int Qui = 0;
-		for(int i=0;i<ville.size();i++) {
-			if(maxHab>ville.get(i).getNbHabitant()) {
-				maxHab = ville.get(i).getNbHabitant();
-				Qui = i;
-			}
-		}
-		ville.remove(Qui);
-		System.out.println(ville.toString());
+		//Collections.sort(ville, new ComparatorHabitant());		
+		for(Ville v : ville) {
+			System.out.println(v);
+			
+		}		
+		Collections.shuffle(ville);
 		
+		/***********************************/
 		
-		Iterator<Ville> iter = ville.iterator();
-		   
-	    while(iter.hasNext()) {
-	    	Ville nb = iter.next();
-	    	if(nb.getNbHabitant()>=100000) {	
-	    		nb.setNom(nb.getNom().toUpperCase());
-	    	} 
-	    	
-	    }
-	    System.out.println(ville.toString());
 	    
 	}
 	
@@ -81,20 +65,19 @@ public class Ville{
 		return nbHabitant;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public void setNbHabitant(int nbHabitant) {
-		this.nbHabitant = nbHabitant;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "Ville [nom=" + nom + ", nbHabitant=" + nbHabitant + "]";
 	}
+	
+	
 
-
+	@Override
+	public int compareTo(Ville o) {
+		// TODO Auto-generated method stub
+		return this.nom.compareTo(o.getNom());
+	}
 	
 	
 }
