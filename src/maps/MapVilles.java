@@ -12,7 +12,7 @@ public class MapVilles {
 		
 		HashMap<Integer, Ville> mapVilles = new HashMap<>();
 		
-		int Max = 0;
+		
 		int id = 0;
 		Ville v1 = new Ville("Nice", 343000);
 		Ville v2 = new Ville("Carcassonne", 47800 );
@@ -31,14 +31,17 @@ public class MapVilles {
 		mapVilles.put(6,v6);
 		mapVilles.put(7,v7);
 		mapVilles.put(8,v8);
+		
 		Iterator<Integer> keysIte = mapVilles.keySet().iterator();
 		Iterator<Ville> valuesIte = mapVilles.values().iterator();
+		
+		int min = Integer.MAX_VALUE;
 		
 		while (valuesIte.hasNext()) {
 			Ville ville = valuesIte.next();
 			int key = keysIte.next();
-			if(ville.getNbHabitant() > Max) {
-				Max = ville.getNbHabitant();
+			if(ville.getNbHabitant() > min) {
+				min = ville.getNbHabitant();
 				id = key;
 			}
 		}
