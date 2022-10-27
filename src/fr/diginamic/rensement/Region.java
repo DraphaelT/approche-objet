@@ -1,10 +1,14 @@
 package fr.diginamic.rensement;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.lang.Comparable;
 
-public class Region{
+public class Region implements Comparable<Region>{
 	
 	private long populationtotal;
 	private int codeRe;
@@ -26,30 +30,18 @@ public class Region{
 		for(Ville v : R.AffichListe()) {			
 			
 			
-			if(Reg != v.getCodeRegion() && populationTotal  != 0){ 				//Temps que la region est la même
-				
+			if(Reg != v.getCodeRegion() && populationTotal  != 0){ 				//Temps que la region est la même			
 				regionListe.put(v.getCodeRegion(),new Region(v.getCodeRegion(),populationTotal));
-				populationTotal = 0;
-				
-				
+				populationTotal = 0;			
 				
 			}	
 			Reg = v.getCodeRegion();
-			populationTotal += v.getPopuTotal();
-				
-			//Collections.sort(regionListe);
-			
-		}
-		
-		for(int i=0;i<=10;i++) {
-			regionListe.get(i);
-		}
-			
+			populationTotal += v.getPopuTotal();	
+					
+		}		
 			
 	}
 		
-		
-	
 	
 	
 	
@@ -64,20 +56,36 @@ public class Region{
 		}
 		System.out.println(total);
 	}
-	
+	/**
+	 * Methode qui affiche le top 10 des region les plus peuple
+	 * @throws IOException
+	 */
 	public void CalculPopulation() throws IOException {
-		
-		 
 		RegionInit();
-		//System.out.println(regionListe);
-			
+		
+		List<Region> list = new ArrayList<>();
+		
+		list.addAll(regionListe.values());
+		Collections.sort(list);
+		for(int i=list.size()-1;i>list.size()-11;i--) {
+			System.out.println(list.get(i));
+		}			
 	}
-
-
 
 	@Override
 	public String toString() {
 		return "Region [populationtotal=" + populationtotal + ", codeRe=" + codeRe +  "]";
+	}
+
+	@Override
+	public int compareTo(Region o) {
+		
+		return Long.compare(this.getPopulationtotal(), o.getPopulationtotal());
+	}
+
+
+	public long getPopulationtotal() {
+		return populationtotal;
 	}
 	
 	

@@ -16,7 +16,7 @@ public class Ville{
 	
 	/**Nombre d'habitant */ 
 	private int nbHabitant;
-	
+	/**Continent de la ville*/
 	private EnumContinent continent;
 	
 	/**
@@ -24,6 +24,7 @@ public class Ville{
 	 * 
 	 * @param nom nom de la ville
 	 * @param nbHabitant nombre d'habitant
+	 * @param continent Nom du continent de la ville
 	 */
 	public Ville(String nom, int nbHabitant,EnumContinent continent) {
 		// TODO Auto-generated constructor stub
@@ -37,14 +38,14 @@ public class Ville{
 		int maxHab=0;
 		String nomVM=null;
 	
-		Ville v1 = new Ville("Nice", 343000,continent.EUROPE);
-		Ville v2 = new Ville("Carcassonne", 47800,continent.EUROPE);
-		Ville v3 = new Ville("Narbonne", 53400 ,continent.OCEANIE);
-		Ville v4 = new Ville("Lyon", 484000 ,continent);
-		Ville v5 = new Ville("Foix", 9700 ,continent);
-		Ville v6 = new Ville("Pau", 77200,continent );
-		Ville v7 = new Ville("Marseille", 850700,continent);
-		Ville v8 = new Ville("Tarbes", 40600,continent);
+		Ville v1 = new Ville("Nice", 343000,EnumContinent.valueOf("EUROPE"));
+		Ville v2 = new Ville("Carcassonne", 47800,EnumContinent.valueOf("EUROPE"));
+		Ville v3 = new Ville("Narbonne", 53400 ,EnumContinent.valueOf("EUROPE"));
+		Ville v4 = new Ville("Lyon", 484000 ,EnumContinent.valueOf("EUROPE"));
+		Ville v5 = new Ville("Foix", 9700 ,EnumContinent.valueOf("EUROPE"));
+		Ville v6 = new Ville("Pau", 77200,EnumContinent.valueOf("EUROPE") );
+		Ville v7 = new Ville("Marseille", 850700,EnumContinent.valueOf("EUROPE"));
+		Ville v8 = new Ville("Tarbes", 40600,EnumContinent.valueOf("EUROPE"));
 		
 		ArrayList<Ville> ville = new ArrayList<Ville>();
 		
